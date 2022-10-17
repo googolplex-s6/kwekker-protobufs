@@ -1,0 +1,12 @@
+syntax = "proto3";
+package kwekker;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/googolplex-s6/kwekker-protobufs";
+
+message Kwek {
+  string text = 1;
+  string user_id = 2;
+  google.protobuf.Timestamp posted_at = 3;
+}
