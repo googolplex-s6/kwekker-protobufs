@@ -25,20 +25,20 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgprd2VrLnByb3RvEgdrd2Vra2VyGh9nb29nbGUvcHJvdG9idWYvdGltZXN0",
-            "YW1wLnByb3RvIloKCkNyZWF0ZUt3ZWsSDAoEdGV4dBgBIAEoCRIPCgd1c2Vy",
+            "YW1wLnByb3RvIm0KCkNyZWF0ZUt3ZWsSDAoEdGV4dBgBIAEoCRIPCgd1c2Vy",
             "X2lkGAIgASgJEi0KCXBvc3RlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXAiWwoKVXBkYXRlS3dlaxIMCgR0ZXh0GAEgASgJEg8KB2t3",
-            "ZWtfaWQYAiABKAMSLgoKdXBkYXRlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5UaW1lc3RhbXAiHQoKRGVsZXRlS3dlaxIPCgdrd2VrX2lkGAEgASgD",
-            "QlNaLWdpdGh1Yi5jb20vZ29vZ29scGxleC1zNi9rd2Vra2VyLXByb3RvYnVm",
-            "cy92MqoCIUdvb2dvbHBsZXguS3dla2tlci5Qcm90b2J1ZnMuS3dla2IGcHJv",
-            "dG8z"));
+            "Zi5UaW1lc3RhbXASEQoJa3dla19ndWlkGAQgASgJImMKClVwZGF0ZUt3ZWsS",
+            "DAoEdGV4dBgBIAEoCRIuCgp1cGRhdGVkX2F0GAMgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcBIRCglrd2VrX2d1aWQYBCABKAlKBAgCEAMiJQoK",
+            "RGVsZXRlS3dlaxIRCglrd2VrX2d1aWQYAiABKAlKBAgBEAJCU1otZ2l0aHVi",
+            "LmNvbS9nb29nb2xwbGV4LXM2L2t3ZWtrZXItcHJvdG9idWZzL3YzqgIhR29v",
+            "Z29scGxleC5Ld2Vra2VyLlByb3RvYnVmcy5Ld2VrYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Googolplex.Kwekker.Protobufs.Kwek.CreateKwek), global::Googolplex.Kwekker.Protobufs.Kwek.CreateKwek.Parser, new[]{ "Text", "UserId", "PostedAt" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Googolplex.Kwekker.Protobufs.Kwek.UpdateKwek), global::Googolplex.Kwekker.Protobufs.Kwek.UpdateKwek.Parser, new[]{ "Text", "KwekId", "UpdatedAt" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Googolplex.Kwekker.Protobufs.Kwek.DeleteKwek), global::Googolplex.Kwekker.Protobufs.Kwek.DeleteKwek.Parser, new[]{ "KwekId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Googolplex.Kwekker.Protobufs.Kwek.CreateKwek), global::Googolplex.Kwekker.Protobufs.Kwek.CreateKwek.Parser, new[]{ "Text", "UserId", "PostedAt", "KwekGuid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Googolplex.Kwekker.Protobufs.Kwek.UpdateKwek), global::Googolplex.Kwekker.Protobufs.Kwek.UpdateKwek.Parser, new[]{ "Text", "UpdatedAt", "KwekGuid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Googolplex.Kwekker.Protobufs.Kwek.DeleteKwek), global::Googolplex.Kwekker.Protobufs.Kwek.DeleteKwek.Parser, new[]{ "KwekGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -82,6 +82,7 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       text_ = other.text_;
       userId_ = other.userId_;
       postedAt_ = other.postedAt_ != null ? other.postedAt_.Clone() : null;
+      kwekGuid_ = other.kwekGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -127,6 +128,18 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       }
     }
 
+    /// <summary>Field number for the "kwek_guid" field.</summary>
+    public const int KwekGuidFieldNumber = 4;
+    private string kwekGuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KwekGuid {
+      get { return kwekGuid_; }
+      set {
+        kwekGuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -145,6 +158,7 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       if (Text != other.Text) return false;
       if (UserId != other.UserId) return false;
       if (!object.Equals(PostedAt, other.PostedAt)) return false;
+      if (KwekGuid != other.KwekGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -155,6 +169,7 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       if (Text.Length != 0) hash ^= Text.GetHashCode();
       if (UserId.Length != 0) hash ^= UserId.GetHashCode();
       if (postedAt_ != null) hash ^= PostedAt.GetHashCode();
+      if (KwekGuid.Length != 0) hash ^= KwekGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,6 +200,10 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
         output.WriteRawTag(26);
         output.WriteMessage(PostedAt);
       }
+      if (KwekGuid.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(KwekGuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -207,6 +226,10 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
         output.WriteRawTag(26);
         output.WriteMessage(PostedAt);
       }
+      if (KwekGuid.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(KwekGuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -225,6 +248,9 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       }
       if (postedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PostedAt);
+      }
+      if (KwekGuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KwekGuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -249,6 +275,9 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
           PostedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         PostedAt.MergeFrom(other.PostedAt);
+      }
+      if (other.KwekGuid.Length != 0) {
+        KwekGuid = other.KwekGuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -280,6 +309,10 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
             input.ReadMessage(PostedAt);
             break;
           }
+          case 34: {
+            KwekGuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -308,6 +341,10 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
               PostedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(PostedAt);
+            break;
+          }
+          case 34: {
+            KwekGuid = input.ReadString();
             break;
           }
         }
@@ -352,8 +389,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateKwek(UpdateKwek other) : this() {
       text_ = other.text_;
-      kwekId_ = other.kwekId_;
       updatedAt_ = other.updatedAt_ != null ? other.updatedAt_.Clone() : null;
+      kwekGuid_ = other.kwekGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -375,18 +412,6 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       }
     }
 
-    /// <summary>Field number for the "kwek_id" field.</summary>
-    public const int KwekIdFieldNumber = 2;
-    private long kwekId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long KwekId {
-      get { return kwekId_; }
-      set {
-        kwekId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "updated_at" field.</summary>
     public const int UpdatedAtFieldNumber = 3;
     private global::Google.Protobuf.WellKnownTypes.Timestamp updatedAt_;
@@ -396,6 +421,18 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       get { return updatedAt_; }
       set {
         updatedAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "kwek_guid" field.</summary>
+    public const int KwekGuidFieldNumber = 4;
+    private string kwekGuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string KwekGuid {
+      get { return kwekGuid_; }
+      set {
+        kwekGuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -415,8 +452,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
         return true;
       }
       if (Text != other.Text) return false;
-      if (KwekId != other.KwekId) return false;
       if (!object.Equals(UpdatedAt, other.UpdatedAt)) return false;
+      if (KwekGuid != other.KwekGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -425,8 +462,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     public override int GetHashCode() {
       int hash = 1;
       if (Text.Length != 0) hash ^= Text.GetHashCode();
-      if (KwekId != 0L) hash ^= KwekId.GetHashCode();
       if (updatedAt_ != null) hash ^= UpdatedAt.GetHashCode();
+      if (KwekGuid.Length != 0) hash ^= KwekGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -449,13 +486,13 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
         output.WriteRawTag(10);
         output.WriteString(Text);
       }
-      if (KwekId != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(KwekId);
-      }
       if (updatedAt_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(UpdatedAt);
+      }
+      if (KwekGuid.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(KwekGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -471,13 +508,13 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
         output.WriteRawTag(10);
         output.WriteString(Text);
       }
-      if (KwekId != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(KwekId);
-      }
       if (updatedAt_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(UpdatedAt);
+      }
+      if (KwekGuid.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(KwekGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -492,11 +529,11 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       if (Text.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
       }
-      if (KwekId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(KwekId);
-      }
       if (updatedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatedAt);
+      }
+      if (KwekGuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KwekGuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -513,14 +550,14 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       if (other.Text.Length != 0) {
         Text = other.Text;
       }
-      if (other.KwekId != 0L) {
-        KwekId = other.KwekId;
-      }
       if (other.updatedAt_ != null) {
         if (updatedAt_ == null) {
           UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         UpdatedAt.MergeFrom(other.UpdatedAt);
+      }
+      if (other.KwekGuid.Length != 0) {
+        KwekGuid = other.KwekGuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -541,15 +578,15 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
             Text = input.ReadString();
             break;
           }
-          case 16: {
-            KwekId = input.ReadInt64();
-            break;
-          }
           case 26: {
             if (updatedAt_ == null) {
               UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 34: {
+            KwekGuid = input.ReadString();
             break;
           }
         }
@@ -571,15 +608,15 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
             Text = input.ReadString();
             break;
           }
-          case 16: {
-            KwekId = input.ReadInt64();
-            break;
-          }
           case 26: {
             if (updatedAt_ == null) {
               UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 34: {
+            KwekGuid = input.ReadString();
             break;
           }
         }
@@ -623,7 +660,7 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeleteKwek(DeleteKwek other) : this() {
-      kwekId_ = other.kwekId_;
+      kwekGuid_ = other.kwekGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -633,15 +670,15 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       return new DeleteKwek(this);
     }
 
-    /// <summary>Field number for the "kwek_id" field.</summary>
-    public const int KwekIdFieldNumber = 1;
-    private long kwekId_;
+    /// <summary>Field number for the "kwek_guid" field.</summary>
+    public const int KwekGuidFieldNumber = 2;
+    private string kwekGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long KwekId {
-      get { return kwekId_; }
+    public string KwekGuid {
+      get { return kwekGuid_; }
       set {
-        kwekId_ = value;
+        kwekGuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -660,7 +697,7 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (KwekId != other.KwekId) return false;
+      if (KwekGuid != other.KwekGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -668,7 +705,7 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (KwekId != 0L) hash ^= KwekId.GetHashCode();
+      if (KwekGuid.Length != 0) hash ^= KwekGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -687,9 +724,9 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (KwekId != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(KwekId);
+      if (KwekGuid.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KwekGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -701,9 +738,9 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (KwekId != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(KwekId);
+      if (KwekGuid.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(KwekGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -715,8 +752,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (KwekId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(KwekId);
+      if (KwekGuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(KwekGuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -730,8 +767,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
       if (other == null) {
         return;
       }
-      if (other.KwekId != 0L) {
-        KwekId = other.KwekId;
+      if (other.KwekGuid.Length != 0) {
+        KwekGuid = other.KwekGuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -748,8 +785,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            KwekId = input.ReadInt64();
+          case 18: {
+            KwekGuid = input.ReadString();
             break;
           }
         }
@@ -767,8 +804,8 @@ namespace Googolplex.Kwekker.Protobufs.Kwek {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            KwekId = input.ReadInt64();
+          case 18: {
+            KwekGuid = input.ReadString();
             break;
           }
         }

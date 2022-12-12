@@ -3,21 +3,24 @@ package kwekker;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/googolplex-s6/kwekker-protobufs/v2";
+option go_package = "github.com/googolplex-s6/kwekker-protobufs/v3";
 option csharp_namespace = "Googolplex.Kwekker.Protobufs.Kwek";
 
 message CreateKwek {
   string text = 1;
   string user_id = 2;
   google.protobuf.Timestamp posted_at = 3;
+  string kwek_guid = 4;
 }
 
 message UpdateKwek {
   string text = 1;
-  int64 kwek_id = 2;
+  reserved 2;
   google.protobuf.Timestamp updated_at = 3;
+  string kwek_guid = 4;
 }
 
 message DeleteKwek {
-  int64 kwek_id = 1;
+  reserved 1;
+  string kwek_guid = 2;
 }
