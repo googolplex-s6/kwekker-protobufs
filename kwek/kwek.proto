@@ -3,7 +3,7 @@ package kwekker;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/googolplex-s6/kwekker-protobufs/v2";
+option go_package = "github.com/googolplex-s6/kwekker-protobufs/v3";
 option csharp_namespace = "Googolplex.Kwekker.Protobufs.Kwek";
 
 message CreateKwek {
