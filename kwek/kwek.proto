@@ -10,14 +10,17 @@ message CreateKwek {
   string text = 1;
   string user_id = 2;
   google.protobuf.Timestamp posted_at = 3;
+  string kwek_guid = 4;
 }
 
 message UpdateKwek {
   string text = 1;
-  int64 kwek_id = 2;
+  reserved 2;
   google.protobuf.Timestamp updated_at = 3;
+  string kwek_guid = 4;
 }
 
 message DeleteKwek {
-  int64 kwek_id = 1;
+  reserved 1;
+  string kwek_guid = 2;
 }
